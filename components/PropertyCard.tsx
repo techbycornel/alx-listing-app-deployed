@@ -1,13 +1,14 @@
 // components/PropertyCard.tsx
 import React from "react";
 import { PropertyProps } from "@/interfaces";
+import Image from "next/image";
 
 const PropertyCard: React.FC<{ property: PropertyProps }> = ({ property }) => {
   return (
     <div className="bg-white rounded-lg shadow-sm overflow-hidden">
       <div className="h-48 w-full bg-gray-200">
         {/* for production prefer next/image; using img for simplicity */}
-        <img
+        <Image
           src={property.image}
           alt={property.name}
           className="object-cover w-full h-full"
