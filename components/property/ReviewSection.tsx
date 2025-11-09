@@ -8,7 +8,9 @@ const ReviewSection = ({ propertyId }) => {
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const response = await axios.get(`/api/properties/${propertyId}/reviews`);
+        const response = await axios.get(
+          `/api/properties/${propertyId}/reviews`
+        );
         setReviews(response.data);
       } catch (error) {
         console.error("Error fetching reviews:", error);
@@ -23,7 +25,6 @@ const ReviewSection = ({ propertyId }) => {
   if (loading) {
     return <p>Loading reviews...</p>;
   }
-
   return (
     <div>
       {reviews.map((review) => (
@@ -34,5 +35,4 @@ const ReviewSection = ({ propertyId }) => {
     </div>
   );
 };
-
 export default ReviewSection;
