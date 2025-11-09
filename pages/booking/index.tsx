@@ -23,7 +23,7 @@ export default function BookingForm() {
 
     try {
       const response = await axios.post("/api/bookings", formData);
-      alert("Booking confirmed!");
+      alert(response.data.message || "Booking confirmed!");
       setFormData({
         firstName: "",
         lastName: "",
