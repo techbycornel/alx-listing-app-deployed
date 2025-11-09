@@ -24,6 +24,16 @@ export default function BookingForm() {
     try {
       const response = await axios.post("/api/bookings", formData);
       alert("Booking confirmed!");
+      setFormData({
+        firstName: "",
+        lastName: "",
+        email: "",
+        phoneNumber: "",
+        cardNumber: "",
+        expirationDate: "",
+        cvv: "",
+        billingAddress: "",
+      });
     } catch (error) {
       setError("Failed to submit booking.");
     } finally {
