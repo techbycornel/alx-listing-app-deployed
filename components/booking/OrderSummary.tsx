@@ -1,6 +1,13 @@
 import Image from "next/image";
+type BookingDetails = {
+  propertyName: string;
+  startDate: string;
+  totalNights: number;
+  bookingFee: number;
+  price: number;
+};
 
-const OrderSummary: React.FC<{ bookingDetails: any }> = ({ bookingDetails }) => (
+const OrderSummary: React.FC<{ bookingDetails: BookingDetails }> = ({ bookingDetails }) => (
   <div className="bg-white p-6 shadow-md rounded-lg">
     <h2 className="text-xl font-semibold">Review Order Details</h2>
     <div className="flex items-center mt-4">
