@@ -36,6 +36,7 @@ export default function BookingForm() {
       });
     } catch (error) {
       setError("Failed to submit booking.");
+      alert(error.response?.data?.message || "An error occurred.");
     } finally {
       setLoading(false);
     }
