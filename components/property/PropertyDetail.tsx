@@ -1,8 +1,8 @@
+import { PropertyProps } from "@/interfaces";
 import React from "react";
-import type { Property } from "@/types"; // or wherever your type lives
 
 type PropertyDetailProps = {
-  property: Property;
+  property: PropertyProps;
 };
 
 const PropertyDetail = ({ property }: PropertyDetailProps) => {
