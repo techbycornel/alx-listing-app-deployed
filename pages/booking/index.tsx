@@ -1,4 +1,4 @@
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useState } from "react";
 
 export default function BookingForm() {
@@ -35,9 +35,11 @@ export default function BookingForm() {
         cvv: "",
         billingAddress: "",
       });
-    } catch (err: any) {
+    } catch (err) {
+      const axiosError = err as AxiosError<{ message?: string }>;
       setError("Failed to submit booking.");
-      alert(err?.response?.data?.message || "An error occurred.");
+
+      alert(axiosError.response?.data?.message || "An error occurred.");
     } finally {
       setLoading(false);
     }
